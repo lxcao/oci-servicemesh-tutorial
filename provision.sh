@@ -25,3 +25,10 @@ oci logging log create --log-group-id ocid1.loggroup.oc1.ap-singapore-1.amaaaaaa
 
 oci logging agent-configuration create --compartment-id ocid1.compartment.oc1..aaaaaaaayjcsmu5ii7ac3kncp5qlbsslaj7irtc3mo4oco22w7ucsiq3atmq --is-enabled true --service-configuration file:///Users/caolingxin/documents/workspaces/oci-projects/oci-servicemesh-tutorial/logconfig.json --display-name bookInfoLoggingAgent --description "Custom agent config for mesh" --group-association '{"groupList": ["ocid1.dynamicgroup.oc1..aaaaaaaaosz4fhyqdms3ze5wljrbyq7q7ueiglodnx6heqs2ansb33cdt2bq"]}'  --profile specialist2 --auth security_token
 
+#Add monitor to mesh
+kubectl create namespace monitoring
+
+kubectl apply -f grafana.yaml
+
+kubectl get svc grafana -n monitoring
+
